@@ -1,4 +1,10 @@
 Project: Xây dựng phần mềm quản lý chi tiêu
+- Nhập/xuất/sửa/xóa thông tin chi tiêu
+- Kiểm tra lịch sử chi tiêu theo ngày, tháng
+- Thống kê chi tiêu theo ngày, tháng, năm
+- Giới hạn chi tiêu và cảnh bảo giới hạn chi tiêu
+
+
 
 
 Các lưu ý khi làm project:
