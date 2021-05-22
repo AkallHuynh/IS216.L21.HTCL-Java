@@ -22,7 +22,9 @@ Các chức năng xóa, sửa thông tin cần phải có xác nhận với ngư
 tiền chi tiêu của tháng.
 #### 2. Kiểm tra lịch sử chi tiêu theo ngày, tháng
 Người dùng sẽ chọn ngày, hoặc tháng.
+<br>**Cần bổ sung**
 #### 3. Thống kê chi tiêu theo tuần, tháng, quý, năm
+**Cần bổ sung**
 #### 4. Đặt giới hạn chi tiêu và cảnh báo khi người dùng sắp vượt giới hạn.
 Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng tháng. Giới hạn này sẽ được áp dụng cho tất cả các tháng kể từ khi giới hạn được thiết lập cho đến khi người dùng hủy giới
 hạn này. Giới hạn mặc định sẽ bằng -1, tức là không có giới hạn. <br>
