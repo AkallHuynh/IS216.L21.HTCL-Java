@@ -14,6 +14,7 @@ Thông tin được nhập bao gồm:
 - Chi tiết vê giao dịch
 Chi tiết giao dịch bao gồm: <br>
 **<Cần bổ sung>**<br>
+
 Mỗi tháng sẽ có lưu tổng lượng tiền đã giao dịch trong tháng đó. Tổng lượng tiền sẽ được đặt về không sau khi bắt đầu tháng mới.<br>
 Lượng tiền giao dịch sẽ được cộng vào tổng tiền chi tiêu trong tháng. Khi tổng tiền chi tiêu trong tháng còn cách giới hạn một khoảng nhỏ hơn hoặc bằng
 một khoảng nhất định do người dùng chọn, một màn hình cảnh báo sẽ được hiển thị. <br>
