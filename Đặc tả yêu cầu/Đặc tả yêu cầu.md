@@ -33,7 +33,7 @@ Nếu chọn thống kê theo tháng thì yêu cầu người dùng nhập thán
 |     |                |            |          |
 |     |                |            |          |
 |     |                |            |          |
-
+|----------------------------------------------|
 |Tổng cộng:                                    |
 
 ** Cần bổ sung**
