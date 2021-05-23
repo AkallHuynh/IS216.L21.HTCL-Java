@@ -32,6 +32,7 @@ Người dùng sẽ chọn tháng, hoặc năm để thống kê chi tiêu. <br>
 |     |                |            |          |
 |-----|----------------|------------|----------|
 |Tổng cộng:                                    |
+
 ** Cần bổ sung**
 #### 4. Đặt giới hạn chi tiêu và cảnh báo khi người dùng sắp vượt giới hạn.
 Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng tháng. Giới hạn này sẽ được áp dụng cho tất cả các tháng kể từ khi giới hạn được thiết lập cho đến khi người dùng hủy giới
