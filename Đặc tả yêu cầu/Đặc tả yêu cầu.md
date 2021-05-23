@@ -25,12 +25,15 @@ Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi ti
 |     |                |            |          |
 |     |                |            |          |
 #### 3. Thống kê chi tiêu theo tháng, năm
-Người dùng sẽ chọn tháng, hoặc năm để thống kê chi tiêu. <br>
+Người dùng sẽ có 2 lựa chọn để thống kê là chọn theo tháng, hoặc năm để thống kê chi tiêu. <br>
+Nếu chọn thống kê theo năm thì yêu cầu người dùng nhập năm cần thống kê.
+Nếu chọn thống kê theo tháng thì yêu cầu người dùng nhập tháng và năm cần thống kê.
 | STT | Ngày giao dịch | Lượng tiền | Chi tiết |
 |-----|----------------|------------|----------|
 |     |                |            |          |
 |     |                |            |          |
 |     |                |            |          |
+
 |Tổng cộng:                                    |
 
 ** Cần bổ sung**
