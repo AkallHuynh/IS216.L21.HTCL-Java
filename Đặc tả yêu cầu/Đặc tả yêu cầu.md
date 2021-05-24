@@ -19,21 +19,21 @@ Các chức năng xóa, sửa thông tin cần phải có xác nhận với ngư
 tiền chi tiêu của tháng.
 #### 2. Kiểm tra lịch sử chi tiêu theo ngày, tháng
 Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi tiêu trong ngày tháng đó. Vị trí ngày có thể được bỏ trống thể hiển thị toàn bộ tháng. Thông tin sẽ được hiển thị dưới dạng bảng
-| STT | Mã chi tiêu | Ngày giao dịch | Lượng tiền | Chi tiết |
-|-----|-------------|----------------|------------|----------|
-|     |             |                |            |          |
-|     |             |                |            |          |
-|     |             |                |            |          |
+| STT | Ngày giao dịch | Lượng tiền | Chi tiết |
+|-----|----------------|------------|----------|
+|     |                |            |          |
+|     |                |            |          |
+|     |                |            |          |
 #### 3. Thống kê chi tiêu theo tháng, năm
 Người dùng sẽ có 2 lựa chọn để thống kê là chọn theo tháng, hoặc năm để thống kê chi tiêu. <br>
 Nếu chọn thống kê theo năm thì yêu cầu người dùng nhập năm cần thống kê.
 Nếu chọn thống kê theo tháng thì yêu cầu người dùng nhập tháng và năm cần thống kê.
-| STT | Mã chi tiêu | Ngày giao dịch | Lượng tiền | Chi tiết |
-|-----|-------------|----------------|------------|----------|
-|     |             |                |            |          |
-|     |             |                |            |          |
-|     |             |                |            |          |
-|Tổng cộng:                                                  |
+| STT | Ngày giao dịch | Lượng tiền | Chi tiết |
+|-----|----------------|------------|----------|
+|     |                |            |          |
+|     |                |            |          |
+|     |                |            |          |
+|Tổng cộng:                                    |
 
 ** Cần bổ sung**
 #### 4. Đặt giới hạn chi tiêu và cảnh báo khi người dùng sắp vượt giới hạn.
