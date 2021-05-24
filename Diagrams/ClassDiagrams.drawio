@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-24T08:42:40.711Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36 Edg/90.0.818.66" etag="Mo1IOVuWBr4YYGZ7Ilvg" version="14.7.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-24T10:09:13.279Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36 Edg/90.0.818.66" etag="t1njnk2kIZqJ0KbYJgOF" version="14.7.0" type="github">
   <diagram id="E7p46zmwXC4tNXd8jsAR" name="Page-1">
-    <mxGraphModel dx="1888" dy="1648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1718" dy="1550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -91,17 +91,11 @@
         <mxCell id="7xS4dSEuNHX6Ny65K52u-9" value="+ kiemTraChiTieu_Thang(int nam,&#xa; int thang): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="-UzbbC5Cm0HuVs2AoaGU-15" vertex="1">
           <mxGeometry y="242" width="220" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="7xS4dSEuNHX6Ny65K52u-4" value="" style="endArrow=none;html=1;" parent="1" source="-UzbbC5Cm0HuVs2AoaGU-15" target="-UzbbC5Cm0HuVs2AoaGU-1" edge="1">
+        <mxCell id="7xS4dSEuNHX6Ny65K52u-4" value="" style="endArrow=openThin;html=1;endFill=0;" parent="1" source="-UzbbC5Cm0HuVs2AoaGU-15" target="-UzbbC5Cm0HuVs2AoaGU-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="220" y="270" as="sourcePoint" />
             <mxPoint x="270" y="220" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="7xS4dSEuNHX6Ny65K52u-5" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="80" y="150" width="20" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="7xS4dSEuNHX6Ny65K52u-6" value="n" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="180" y="150" width="20" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
