@@ -2,7 +2,7 @@
 ### Chức năng phần mềm
 Phần mềm quản lý quản lý chi tiêu cung cấp 4 chức năng chính:
 - Nhập/xuất/sửa/xóa thông tin chi tiêu
-- Kiểm tra lịch sử chi tiêu theo ngày, tháng
+- Kiểm tra lịch sử chi tiêu theo ngày, tháng, năm
 - Thống kê chi tiêu theo ngày, tháng, năm
 - Giới hạn chi tiêu và cảnh bảo giới hạn chi tiêu theo tháng
 ### Yêu cầu
