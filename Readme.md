@@ -2,7 +2,7 @@ Project: Xây dựng phần mềm quản lý chi tiêu
 - Nhập/xuất/sửa/xóa thông tin chi tiêu
 - Kiểm tra lịch sử chi tiêu theo ngày, tháng
 - Thống kê chi tiêu theo ngày, tháng, năm
-- Giới hạn chi tiêu và cảnh bảo giới hạn chi tiêu
+- Giới hạn chi tiêu và cảnh báo giới hạn chi tiêu
 
 <br>[Đặc tả đối với mỗi chức năng](https://github.com/AkallHuynh/IS216.L21.HTCL-Java/blob/main/%C4%90%E1%BA%B7c%20t%E1%BA%A3%20y%C3%AAu%20c%E1%BA%A7u/%C4%90%E1%BA%B7c%20t%E1%BA%A3%20y%C3%AAu%20c%E1%BA%A7u.md)
 
