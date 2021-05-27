@@ -24,16 +24,13 @@ Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi ti
 |     |                |            |          |
 |     |                |            |          |
 |     |                |            |          |
-#### 3. Thống kê chi tiêu theo tháng, năm
-Người dùng sẽ có 2 lựa chọn để thống kê là chọn theo tháng, hoặc năm để thống kê chi tiêu. <br>
-Nếu chọn thống kê theo năm thì yêu cầu người dùng nhập năm cần thống kê.
-Nếu chọn thống kê theo tháng thì yêu cầu người dùng nhập tháng và năm cần thống kê.
-| STT | Ngày giao dịch | Lượng tiền | Chi tiết |
-|-----|----------------|------------|----------|
-|     |                |            |          |
-|     |                |            |          |
-|     |                |            |          |
-|Tổng cộng:                                    |
+#### 3. Thống kê chi tiêu theo tháng
+Người dùng chọn 2 thông tin là tháng và năm.<br>
+Thông tin thống kê bao gồm:
+- Tổng chi tiêu trong tháng.
+- Ngày sử dụng nhiều nhất.
+- Khoảng cách tới hạn mức.
+- Cách biệt so với tổng chi tiêu tháng trước
 
 #### 4. Đặt giới hạn chi tiêu và cảnh báo khi người dùng sắp vượt giới hạn.
 Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng tháng. Giới hạn này sẽ được áp dụng cho tất cả các tháng kể từ khi giới hạn được thiết lập cho đến khi người dùng hủy giới
