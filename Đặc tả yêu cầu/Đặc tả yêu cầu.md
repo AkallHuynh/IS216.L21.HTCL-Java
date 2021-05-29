@@ -12,14 +12,28 @@ Thông tin được nhập bao gồm:
 - Lượng tiền đã chi
 - Ngày chi
 - Chi tiết chi tiêu <br>
-Mỗi tháng sẽ có lưu tổng lượng tiền đã chi tiêu trong tháng đó. Tổng lượng tiền sẽ được đặt về không sau khi bắt đầu tháng mới.<br>
+
+Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như sau:
+| STT | Tên hàng hóa   | Số lượng   | Tổng     |
+|-----|----------------|------------|----------|
+|     |                |            |          |
+|     |                |            |          |
+|     |                |            |          |
+Lượng tiền đã chi sẽ được tính tự động bằng tổng tiền đã chi với mỗi hàng hóa.
+Mỗi tháng sẽ có lưu tổng lượng tiền đã chi tiêu trong tháng đó một cách thủ công. Tổng lượng tiền sẽ được đặt về không sau khi bắt đầu tháng mới.<br>
 Lượng tiền chi tiêu sẽ được cộng vào tổng tiền chi tiêu trong tháng. Khi tổng tiền chi tiêu trong tháng còn cách giới hạn một khoảng nhỏ hơn hoặc bằng
 một khoảng nhất định do người dùng chọn, một màn hình cảnh báo sẽ được hiển thị. <br>
 Các chức năng xóa, sửa thông tin cần phải có xác nhận với người dùng trước khi thực hiện. Sau khi thực hiện, nếu giao dịch bị xóa, sửa thuộc tháng hiện tại, cần cập nhập lại tổng
 tiền chi tiêu của tháng.
 #### 2. Kiểm tra lịch sử chi tiêu theo ngày, tháng
 Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi tiêu trong ngày tháng đó. Vị trí ngày có thể được bỏ trống thể hiển thị toàn bộ tháng. Thông tin sẽ được hiển thị dưới dạng bảng
-| STT | Ngày giao dịch | Lượng tiền | Chi tiết |
+| Mã giao dịch | Ngày giao dịch | Lượng tiền | Chi tiết |          
+|--------------|----------------|------------|----------|
+|              |                |            |          |
+|              |                |            |          |
+|              |                |            |          |
+Người dùng có thể chọn một giao dịch để có thể xem chi tiết thông tin giao dịch dưới dạng bảng sau:
+| STT | Tên hàng hóa   | Số lượng   | Tổng     |
 |-----|----------------|------------|----------|
 |     |                |            |          |
 |     |                |            |          |
