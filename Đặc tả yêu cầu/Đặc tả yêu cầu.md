@@ -19,6 +19,8 @@ Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như
 |     |                |            |          |
 |     |                |            |          |
 |     |                |            |          |
+
+
 Lượng tiền đã chi sẽ được tính tự động bằng tổng tiền đã chi với mỗi hàng hóa.
 Mỗi tháng sẽ có lưu tổng lượng tiền đã chi tiêu trong tháng đó một cách thủ công. Tổng lượng tiền sẽ được đặt về không sau khi bắt đầu tháng mới.<br>
 Lượng tiền chi tiêu sẽ được cộng vào tổng tiền chi tiêu trong tháng. Khi tổng tiền chi tiêu trong tháng còn cách giới hạn một khoảng nhỏ hơn hoặc bằng
@@ -32,7 +34,9 @@ Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi ti
 |              |                |            |          |
 |              |                |            |          |
 |              |                |            |          |
+
 Người dùng có thể chọn một giao dịch để có thể xem chi tiết thông tin giao dịch dưới dạng bảng sau:
+
 | STT | Tên hàng hóa   | Số lượng   | Tổng     |
 |-----|----------------|------------|----------|
 |     |                |            |          |
