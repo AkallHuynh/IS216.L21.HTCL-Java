@@ -12,8 +12,7 @@ Thông tin được nhập bao gồm:
 - Mã chi tiêu: sẽ được tư động generate
 - Số tiền đã chi
 - Ngày chi
-- Chi tiết chi tiêu <br>
-
+- Chi tiết chi tiêu  
 Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như sau:
 | Mã chi tiêu | Tên hàng hóa   | Số lượng   | Tổng tiền|
 |-------------|----------------|------------|----------|
@@ -21,21 +20,13 @@ Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như
 |             |                |            |          |
 |             |                |            |          |
 
-
 Lượng tiền đã chi sẽ được tính tự động bằng tổng tiền đã chi với mỗi hàng hóa.
 Mỗi tháng sẽ có lưu tổng lượng tiền đã chi tiêu trong tháng đó một cách thủ công. Tổng lượng tiền sẽ được đặt về không sau khi bắt đầu tháng mới.<br>
 Lượng tiền chi tiêu sẽ được cộng vào tổng tiền chi tiêu trong tháng. Khi tổng tiền chi tiêu trong tháng còn cách giới hạn một khoảng nhỏ hơn hoặc bằng
 một khoảng nhất định do người dùng chọn, một màn hình cảnh báo sẽ được hiển thị. <br>
 Các chức năng xóa, sửa thông tin cần phải có xác nhận với người dùng trước khi thực hiện. Sau khi thực hiện, nếu giao dịch bị xóa, sửa thuộc tháng hiện tại, cần cập nhập lại tổng
 tiền chi tiêu của tháng.
-#### 2. Kiểm tra lịch sử chi tiêu theo ngày, tháng
-Người dùng sẽ chọn ngày và tháng để hiển thị thông tin chi tiêu trong ngày tháng đó. Vị trí ngày có thể được bỏ trống thể hiển thị toàn bộ tháng. Thông tin sẽ được hiển thị dưới dạng bảng
-| Mã giao dịch | Ngày giao dịch | Lượng tiền | Chi tiết |          
-|--------------|----------------|------------|----------|
-|              |                |            |          |
-|              |                |            |          |
-|              |                |            |          |
-
+#### 2. Kiểm tra lịch sử chi tiêu theo ngày
 Người dùng có thể chọn một giao dịch để có thể xem chi tiết thông tin giao dịch dưới dạng bảng sau:
 
 | STT | Tên hàng hóa   | Số lượng   | Tổng     |
@@ -44,12 +35,18 @@ Người dùng có thể chọn một giao dịch để có thể xem chi tiết
 |     |                |            |          |
 |     |                |            |          |
 #### 3. Thống kê chi tiêu theo tháng
-Người dùng chọn 2 thông tin là tháng và năm.<br>
+Người dùng chọn 2 thông tin là tháng và năm.  
 Thông tin thống kê bao gồm:
-- Tổng chi tiêu trong tháng.
-- Ngày sử dụng nhiều nhất.
-- Khoảng cách tới hạn mức.
-- Cách biệt so với tổng chi tiêu tháng trước
+- Tổng chi tiêu trong tháng.  
+- Ngày sử dụng nhiều nhất.  
+- Khoảng cách tới hạn mức.  
+- Cách biệt so với tổng chi tiêu tháng trước.    
+- Lịch sử giao dịch trong tháng sẽ được thể hiện dưới dạng bảng.  
+| Mã giao dịch | Ngày giao dịch | Lượng tiền | Chi tiết |          
+|--------------|----------------|------------|----------|
+|              |                |            |          |
+|              |                |            |          |
+|              |                |            |          |
 
 #### 4. Đặt giới hạn chi tiêu và cảnh báo khi người dùng sắp vượt giới hạn.
 Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng tháng. Giới hạn này sẽ được áp dụng cho tất cả các tháng kể từ khi giới hạn được thiết lập cho đến khi người dùng hủy giới
