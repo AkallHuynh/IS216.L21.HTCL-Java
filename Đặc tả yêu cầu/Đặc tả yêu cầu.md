@@ -43,6 +43,7 @@ Thông tin thống kê bao gồm:
 - Khoảng cách tới hạn mức.  
 - Cách biệt so với tổng chi tiêu tháng trước.    
 - Lịch sử giao dịch trong tháng sẽ được thể hiện dưới dạng bảng.  
+
 | Mã giao dịch | Ngày giao dịch | Lượng tiền | Chi tiết |          
 |--------------|----------------|------------|----------|
 |              |                |            |          |
