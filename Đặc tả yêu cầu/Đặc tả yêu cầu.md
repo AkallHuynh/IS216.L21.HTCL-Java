@@ -10,7 +10,7 @@ Phần mềm quản lý quản lý chi tiêu cung cấp 4 chức năng chính:
 #### 1. Nhập/Xuất/Xóa/Sửa thông tin chi tiêu
 Thông tin được nhập bao gồm:
 - Mã chi tiêu: sẽ được tư động generate
-- Lượng tiền đã chi
+- Số tiền đã chi
 - Ngày chi
 - Chi tiết chi tiêu <br>
 
