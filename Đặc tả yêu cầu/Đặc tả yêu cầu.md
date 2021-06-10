@@ -14,6 +14,7 @@ Thông tin được nhập bao gồm:
 - Ngày chi
 - Chi tiết chi tiêu  
 Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như sau:  
+
 | Mã chi tiêu | Tên hàng hóa   | Số lượng   | Tổng tiền|
 |-------------|----------------|------------|----------|
 |             |                |            |          |
@@ -28,6 +29,7 @@ Các chức năng xóa, sửa thông tin cần phải có xác nhận với ngư
 tiền chi tiêu của tháng.
 #### 2. Kiểm tra lịch sử chi tiêu theo ngày
 Người dùng có thể chọn một giao dịch để có thể xem chi tiết thông tin giao dịch dưới dạng bảng sau:  
+
 | STT | Tên hàng hóa   | Số lượng   | Tổng     |
 |-----|----------------|------------|----------|
 |     |                |            |          |
