@@ -14,11 +14,11 @@ Thông tin được nhập bao gồm:
 - Chi tiết chi tiêu <br>
 
 Chi tiết chi tiêu là một danh sách hàng hóa chứa các thông tin như sau:
-| STT | Tên hàng hóa   | Số lượng   | Tổng tiền|
-|-----|----------------|------------|----------|
-|     |                |            |          |
-|     |                |            |          |
-|     |                |            |          |
+| Mã chi tiêu | Tên hàng hóa   | Số lượng   | Tổng tiền|
+|-------------|----------------|------------|----------|
+|             |                |            |          |
+|             |                |            |          |
+|             |                |            |          |
 
 
 Lượng tiền đã chi sẽ được tính tự động bằng tổng tiền đã chi với mỗi hàng hóa.
