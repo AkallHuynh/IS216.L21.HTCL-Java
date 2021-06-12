@@ -53,3 +53,9 @@ Thông tin thống kê bao gồm:
 Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng tháng. Giới hạn này sẽ được áp dụng cho tất cả các tháng kể từ khi giới hạn được thiết lập cho đến khi người dùng hủy giới
 hạn này. Giới hạn mặc định sẽ bằng 0, tức là không có giới hạn.  
 Đồng thời, người dùng được đặt một cảnh báo khi tổng lượng tiền giao dịch trong tháng còn cách giới hạn một lượng nhất đinh. Mặc định, khoảng này sẽ là 90%.  
+
+
+
+#### 5. Sửa
+Thêm screen menu chính
+Thêm 1 screen cho lần chi tiêu để hiện thông tin chi tiêu cho phép sửa, xóa.
