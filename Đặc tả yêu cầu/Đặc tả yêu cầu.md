@@ -57,6 +57,6 @@ hạn này. Giới hạn mặc định sẽ bằng 0, tức là không có giớ
 
 
 #### 5. Sửa
-Thêm screen menu chính
-Thêm 1 screen cho lần chi tiêu để hiện thông tin chi tiêu cho phép sửa, xóa.
-Thêm time vào lần giao dịch bằng 3 cái spinner
+Thêm screen menu chính  
+Thêm 1 screen cho lần chi tiêu để hiện thông tin chi tiêu cho phép sửa, xóa.  
+Thêm time vào lần giao dịch bằng 3 cái spinner  
