@@ -54,9 +54,12 @@ Người dùng sẽ được phép đặt một giới hạn chi tiêu hàng th�
 hạn này. Giới hạn mặc định sẽ bằng 0, tức là không có giới hạn.  
 Đồng thời, người dùng được đặt một cảnh báo khi tổng lượng tiền giao dịch trong tháng còn cách giới hạn một lượng nhất đinh. Mặc định, khoảng này sẽ là 90%.  
 
+#### 5. Đăng nhập
+Thông tin chi tiêu được tính là thông tin cá nhân và cần được bảo vệ. Do vậy, ứng dụng cung cấp tính năng đăng nhập để bảo vệ thông tin này. Ngoài ra, việc cung
+cấp tính năng đăng nhập còn hỗ trợ đa người dùng trên ứng dụng.  
+Thông tin đăng nhập sẽ bao gồm tên đăng nhập(username) và mật khẩu. Trong đó, tên đăng nhập là duy nhất. Mật khẩu sẽ được mã hóa một cách đơn giản bằng mã hóa ceasar và lưu vào cơ sở dữ liệu tương ứng với tên đăng nhập.  
 
-
-#### 5. Sửa
+#### Chỉnh sửa
 Thêm screen menu chính  
 Thêm 1 screen cho lần chi tiêu để hiện thông tin chi tiêu cho phép sửa, xóa.  
 Thêm time vào lần giao dịch bằng 3 cái spinner  
