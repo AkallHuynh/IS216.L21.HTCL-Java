@@ -27,7 +27,7 @@ Lượng tiền chi tiêu sẽ được cộng vào tổng tiền chi tiêu tron
 một khoảng nhất định do người dùng chọn, một màn hình cảnh báo sẽ được hiển thị. <br>
 Các chức năng xóa, sửa thông tin cần phải có xác nhận với người dùng trước khi thực hiện. Sau khi thực hiện, nếu giao dịch bị xóa, sửa thuộc tháng hiện tại, cần cập nhập lại tổng
 tiền chi tiêu của tháng.
-#### 2. Kiểm tra lịch sử chi tiêu theo ngày
+#### 2. Kiểm tra lịch sử chi tiêu theo lần chi tiêu
 Người dùng có thể chọn một giao dịch để có thể xem chi tiết thông tin giao dịch dưới dạng bảng sau:  
 
 | STT | Tên hàng hóa   | Số lượng   | Tổng     |
