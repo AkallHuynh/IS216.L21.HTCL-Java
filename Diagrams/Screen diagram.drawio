@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-14T03:05:55.266Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="mcz6FRiosTR10sCuvcAE" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-14T03:24:33.315Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="36cyho6fnLoRA3EbR6JC" version="14.7.7" type="github">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Page-1">
     <mxGraphModel dx="2333" dy="1881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -11,7 +11,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KsnyNKV8xD6eK6TbKihS-116" value="Hãy kiểm tra lại thông tin&lt;br&gt;chi tiêu trước khi xác nhận" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
-          <mxGeometry x="245" y="480" width="250" height="140" as="geometry" />
+          <mxGeometry x="240" y="480" width="250" height="140" as="geometry" />
         </mxCell>
         <mxCell id="KsnyNKV8xD6eK6TbKihS-117" value="Xác nhận" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;" parent="KsnyNKV8xD6eK6TbKihS-116" vertex="1">
           <mxGeometry width="250" height="30" relative="1" as="geometry" />
@@ -267,7 +267,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fEtWrxZ9Q_CUSQm69vdD-1" value="Chi tiêu trong tháng còn cách&lt;br&gt;giới hạn &amp;lt;%&amp;gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
-          <mxGeometry x="245" y="680" width="250" height="140" as="geometry" />
+          <mxGeometry x="240" y="680" width="250" height="140" as="geometry" />
         </mxCell>
         <mxCell id="fEtWrxZ9Q_CUSQm69vdD-2" value="Cảnh báo" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;" parent="fEtWrxZ9Q_CUSQm69vdD-1" vertex="1">
           <mxGeometry width="250" height="30" relative="1" as="geometry" />
