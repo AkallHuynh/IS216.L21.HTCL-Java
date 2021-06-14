@@ -57,7 +57,7 @@ hạn này. Giới hạn mặc định sẽ bằng 0, tức là không có giớ
 #### 5. Đăng nhập
 Thông tin chi tiêu được tính là thông tin cá nhân và cần được bảo vệ. Do vậy, ứng dụng cung cấp tính năng đăng nhập để bảo vệ thông tin này. Ngoài ra, việc cung
 cấp tính năng đăng nhập còn hỗ trợ đa người dùng trên ứng dụng.  
-Thông tin đăng nhập sẽ bao gồm tên đăng nhập(username) và mật khẩu. Trong đó, tên đăng nhập là duy nhất. Mật khẩu sẽ được mã hóa một cách đơn giản bằng mã hóa ceasar và lưu vào cơ sở dữ liệu tương ứng với tên đăng nhập.  
+Thông tin đăng nhập sẽ bao gồm tên đăng nhập(username) và mật khẩu. Trong đó, tên đăng nhập là duy nhất. Mật khẩu sẽ được lưu trực tiếp vào cơ sở dữ liệu mà không qua mã hóa.
 
 #### Chỉnh sửa
 Thêm screen menu chính  
