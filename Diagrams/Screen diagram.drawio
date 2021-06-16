@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-16T00:49:40.221Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="qcrTtvBvYuPU2bAxT04k" version="14.7.9" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-16T00:49:53.218Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="enHfcbG4B3MhbAYryWax" version="14.7.9" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
     <mxGraphModel dx="2926" dy="2194" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -407,7 +407,7 @@
         <mxCell id="zOUMmwGg_xpKz38YwSDY-9" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="90" y="-870" width="550" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="zOUMmwGg_xpKz38YwSDY-10" value="Window Title" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
+        <mxCell id="zOUMmwGg_xpKz38YwSDY-10" value="Đăng nhập" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
           <mxGeometry width="550" height="380" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-11" value="&lt;b&gt;Đăng nhập&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
