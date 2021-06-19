@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T11:25:26.320Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="f6SM0p0tmId1p3s1I18p" version="14.8.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-19T11:25:43.591Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="dUdVVWOJmRyKVxSw1BUE" version="14.8.0" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
     <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -423,25 +423,25 @@
           <mxGeometry x="270" y="290" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-15" value="Thời gian" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1150" y="-630" width="430" height="120" as="geometry" />
+          <mxGeometry x="700" y="-380" width="430" height="120" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-22" value="Giờ:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="1180" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="730" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-23" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.spinner;strokeColor=#999999;spinLayout=right;spinStyle=normal;adjStyle=triangle;fillColor=#aaddff;fontSize=17;fontColor=#666666;mainText=;html=1;overflow=fill;" parent="1" vertex="1">
-          <mxGeometry x="1230" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="780" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-26" value="Phút:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="1300" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="850" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-27" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.spinner;strokeColor=#999999;spinLayout=right;spinStyle=normal;adjStyle=triangle;fillColor=#aaddff;fontSize=17;fontColor=#666666;mainText=;html=1;overflow=fill;" parent="1" vertex="1">
-          <mxGeometry x="1350" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="900" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-28" value="Giây:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="1430" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="980" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-29" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.spinner;strokeColor=#999999;spinLayout=right;spinStyle=normal;adjStyle=triangle;fillColor=#aaddff;fontSize=17;fontColor=#666666;mainText=;html=1;overflow=fill;" parent="1" vertex="1">
-          <mxGeometry x="1480" y="-570" width="50" height="30" as="geometry" />
+          <mxGeometry x="1030" y="-320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-41" value="Sai mật khẩu hoặc&lt;br&gt;tên đăng nhập" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
           <mxGeometry x="-300" y="-860" width="250" height="140" as="geometry" />
