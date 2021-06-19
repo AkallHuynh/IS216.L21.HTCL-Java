@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T11:22:45.381Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="yfTa4YlhpcGuX7RHy0a2" version="14.8.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-19T11:24:00.981Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="YUXMKDzQMZhHLcAix8PC" version="14.8.0" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
     <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -278,7 +278,7 @@
         <mxCell id="09SewAB6d0spETSHWCLL-45" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="-510" y="50" width="560" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="09SewAB6d0spETSHWCLL-46" value="Thống kê chi tiêu tháng" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;" parent="09SewAB6d0spETSHWCLL-45" vertex="1">
+        <mxCell id="09SewAB6d0spETSHWCLL-46" value="Thống kê chi tiêu" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;" parent="09SewAB6d0spETSHWCLL-45" vertex="1">
           <mxGeometry width="560" height="380" as="geometry" />
         </mxCell>
         <mxCell id="09SewAB6d0spETSHWCLL-47" value="Tháng" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="09SewAB6d0spETSHWCLL-45" vertex="1">
