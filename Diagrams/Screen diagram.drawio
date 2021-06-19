@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T11:24:00.981Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="YUXMKDzQMZhHLcAix8PC" version="14.8.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-19T11:25:26.320Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48" etag="f6SM0p0tmId1p3s1I18p" version="14.8.0" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
     <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -519,8 +519,8 @@
         <mxCell id="zOUMmwGg_xpKz38YwSDY-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;" parent="1" source="zOUMmwGg_xpKz38YwSDY-10" target="zOUMmwGg_xpKz38YwSDY-58" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint y="-680" />
-              <mxPoint y="-330" />
+              <mxPoint x="20" y="-680" />
+              <mxPoint x="20" y="-330" />
             </Array>
           </mxGeometry>
         </mxCell>
