@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-28T13:29:23.961Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 Edg/91.0.864.59" etag="4z7m7sSh5o-QKDvCbeXR" version="14.8.1" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-06-28T14:04:12.777Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 Edg/91.0.864.59" etag="ZtrdweAXdVd7XTekz08y" version="14.8.2" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
-    <mxGraphModel dx="3445" dy="2468" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2297" dy="1850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -58,7 +58,7 @@
         <mxCell id="KsnyNKV8xD6eK6TbKihS-71" value="Số lượng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=#f5f5f5;top=0;left=0;bottom=0;right=0;strokeColor=#666666;gradientDirection=south;gradientColor=#b3b3b3;" parent="KsnyNKV8xD6eK6TbKihS-68" vertex="1">
           <mxGeometry x="280" width="141" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="KsnyNKV8xD6eK6TbKihS-72" value="Tổng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=#f5f5f5;top=0;left=0;bottom=0;right=0;strokeColor=#666666;gradientDirection=south;gradientColor=#b3b3b3;" parent="KsnyNKV8xD6eK6TbKihS-68" vertex="1">
+        <mxCell id="KsnyNKV8xD6eK6TbKihS-72" value="Thành tiền" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=#f5f5f5;top=0;left=0;bottom=0;right=0;strokeColor=#666666;gradientDirection=south;gradientColor=#b3b3b3;" parent="KsnyNKV8xD6eK6TbKihS-68" vertex="1">
           <mxGeometry x="421" width="139" height="25" as="geometry" />
         </mxCell>
         <mxCell id="KsnyNKV8xD6eK6TbKihS-73" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="KsnyNKV8xD6eK6TbKihS-67" vertex="1">
@@ -127,7 +127,7 @@
         <mxCell id="KsnyNKV8xD6eK6TbKihS-101" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=12;spacingLeft=4;spacingTop=-3;strokeColor=#666666;mainText=" parent="KsnyNKV8xD6eK6TbKihS-130" vertex="1">
           <mxGeometry x="120" y="80" width="150" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="KsnyNKV8xD6eK6TbKihS-102" value="Đơn giá" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KsnyNKV8xD6eK6TbKihS-130" vertex="1">
+        <mxCell id="KsnyNKV8xD6eK6TbKihS-102" value="Thành tiền" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KsnyNKV8xD6eK6TbKihS-130" vertex="1">
           <mxGeometry x="295" y="80" width="100" height="25" as="geometry" />
         </mxCell>
         <mxCell id="KsnyNKV8xD6eK6TbKihS-103" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=12;spacingLeft=4;spacingTop=-3;strokeColor=#666666;mainText=" parent="KsnyNKV8xD6eK6TbKihS-130" vertex="1">
