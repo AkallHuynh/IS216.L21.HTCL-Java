@@ -10,16 +10,19 @@ package is216.qlchitieu.GUI;
  * @author dangk
  */
 public class MainMenu extends javax.swing.JFrame {
+
     final String nguoiDung;
+
     /**
      * Creates new form MainMenu
+     *
      * @param nguoiDung: Nguoi hien dang su dung chuong trinh
      */
     public MainMenu(String nguoiDung) {
         initComponents();
         this.nguoiDung = nguoiDung;
         String txt = lbNguoiDung.getText();
-        lbNguoiDung.setText(txt + " " +nguoiDung);
+        lbNguoiDung.setText(txt + " " + nguoiDung);
     }
 
     /**
@@ -45,6 +48,11 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setText("QUẢN LÝ CHI TIÊU");
 
         jButton1.setText("Thống kê chi tiêu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Thiết lập hạn mức");
 
@@ -107,6 +115,12 @@ public class MainMenu extends javax.swing.JFrame {
         new Login().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnDangXuatActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new ThongTinChiTieu(nguoiDung).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
