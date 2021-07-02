@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BLL;
+package is216.qlchitieu.BLL;
 
 import DAL.ChiTieuDAL;
 import DTO.ChiTieuDTO;

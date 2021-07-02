@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAL;
+package is216.qlchitieu.DAL;
 
 import DTO.GioiHanChiTieuDTO;
-import Utils.DBUtils;
+import Utils.DBConnect;
 import java.sql.*;
 import java.util.ArrayList;
 
