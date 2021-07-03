@@ -6,7 +6,7 @@
 package is216.qlchitieu.BLL;
 
 import is216.qlchitieu.DAL.TieuDungDAL;
-import DTO.TieuDungDTO;
+import is216.qlchitieu.DTO.TieuDungDTO;
 import java.util.ArrayList;
 
 /**

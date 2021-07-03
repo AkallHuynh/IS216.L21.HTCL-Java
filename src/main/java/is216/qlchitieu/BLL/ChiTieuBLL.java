@@ -5,8 +5,8 @@
  */
 package is216.qlchitieu.BLL;
 
-import DAL.ChiTieuDAL;
-import DTO.ChiTieuDTO;
+import is216.qlchitieu.DAL.ChiTieuDAL;
+import is216.qlchitieu.DTO.ChiTieuDTO;
 import java.util.ArrayList;
 
 /**

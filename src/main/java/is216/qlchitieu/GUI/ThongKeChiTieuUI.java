@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package is216.qlchitieu.GUI;
 
-import BLL.ChiTieuBLL;
-import BLL.GioiHanChiTieuBLL;
-import BLL.TieuDungBLL;
-import DTO.ChiTieuDTO;
-import DTO.GioiHanChiTieuDTO;
-import DTO.TieuDungDTO;
-import Utils.DBUtils;
+import is216.qlchitieu.BLL.ChiTieuBLL;
+import is216.qlchitieu.BLL.GioiHanChiTieuBLL;
+import is216.qlchitieu.BLL.TieuDungBLL;
+import is216.qlchitieu.DTO.ChiTieuDTO;
+import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
+import is216.qlchitieu.DTO.TieuDungDTO;
+import is216.qlchitieu.DBUtils.DBConnect;
 import java.sql.*;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -68,7 +68,7 @@ public class ThongKeChiTieuUI extends javax.swing.JFrame {
     public void loadThangThongKe(String nguoiDung){
         try{
             String strSQL = "select ngaychi from thongtinchitieu where tendangnhap = '"+nguoiDung+"' order by ngaychi desc";
-            Connection con = new DBUtils().createConn();
+            Connection con = new DBConnect().createConn();
             Statement stat = con.createStatement();
             ResultSet rs = stat.executeQuery(strSQL);
             while(rs.next()){

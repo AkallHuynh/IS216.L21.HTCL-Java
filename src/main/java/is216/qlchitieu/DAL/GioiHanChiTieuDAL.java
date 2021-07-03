@@ -5,8 +5,8 @@
  */
 package is216.qlchitieu.DAL;
 
-import DTO.GioiHanChiTieuDTO;
-import Utils.DBConnect;
+import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
+import is216.qlchitieu.DBUtils.DBConnect;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author huynh
  */
 public class GioiHanChiTieuDAL {
-    private DBUtils dbu = null;
+    private DBConnect dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -23,7 +23,7 @@ public class GioiHanChiTieuDAL {
         GioiHanChiTieuDTO result = new GioiHanChiTieuDTO();
         String strSQL = "select * from gioihanchitieu where tendangnhap = '"+tenDangNhap+"'";
         try{
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -33,6 +33,34 @@ public class GioiHanChiTieuDAL {
                 result.setGioiHan(rs.getInt("gioihan"));
                 result.setTongChiTieuThang(rs.getDouble("tongchitieuthang"));
             }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                conn.close();
+                pres.close();
+                rs.close();
+
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan){
+        int result = 0;
+
+        String updateGioiHan = "update gioihanchitieu set gioihan = "+gioiHan+" where tendangnhap = '"+tenDangNhap+"'";
+ 
+        try{
+            dbu = new DBConnect();
+            conn = dbu.createConn();
+            pres = conn.prepareStatement(updateGioiHan);
+            result = pres.executeUpdate();
+
         }
         catch(Exception e){
             e.printStackTrace();

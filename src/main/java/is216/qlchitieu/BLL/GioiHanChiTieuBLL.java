@@ -5,8 +5,8 @@
  */
 package is216.qlchitieu.BLL;
 
-import DAL.GioiHanChiTieuDAL;
-import DTO.GioiHanChiTieuDTO;
+import is216.qlchitieu.DAL.GioiHanChiTieuDAL;
+import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
 
 /**
  *
@@ -16,5 +16,8 @@ public class GioiHanChiTieuBLL {
     GioiHanChiTieuDAL ghctDal = new GioiHanChiTieuDAL();
     public GioiHanChiTieuDTO getGioiHanChiTieuByTenDangNhap(String tendangnhap){
         return ghctDal.getGioiHanChiTieuByTenDangNhap(tendangnhap);
+    }
+    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan){
+        return ghctDal.updateGioiHanChiTieuByTenDangNhap(tenDangNhap, gioiHan);
     }
 }

@@ -5,8 +5,8 @@
  */
 package is216.qlchitieu.DAL;
 
-import DTO.ChiTieuDTO;
-import Utils.DBUtils;
+import is216.qlchitieu.DTO.ChiTieuDTO;
+import is216.qlchitieu.DBUtils.DBConnect;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author huynh
  */
 public class ChiTieuDAL {
-    private DBUtils dbu = null;
+    private DBConnect dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -26,7 +26,7 @@ public class ChiTieuDAL {
         String sqlSelectAll = "select * from thongtinchitieu";
         
         try{
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlSelectAll);
             rs = pres.executeQuery();
@@ -65,7 +65,7 @@ public class ChiTieuDAL {
         String strSQL = "select * from thongtinchitieu where tendangnhap = '"+tenDangNhap+"'";
         
         try{
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -108,7 +108,7 @@ public class ChiTieuDAL {
         String strSQL = "select * from thongtinchitieu where tendangnhap = '"+tenDangNhap+"'";
         
         try{
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -146,7 +146,7 @@ public class ChiTieuDAL {
         double luongTien =0;
         try{
             String strSQL1 = "select maTieuDung from thongtinchitieu where machitieu = '"+machitieu+"'";
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL1);
             rs = pres.executeQuery();

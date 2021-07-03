@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package is216.qlchitieu.GUI;
+import is216.qlchitieu.BLL.GioiHanChiTieuBLL;
+import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
 import javax.swing.DefaultComboBoxModel;
 import java.util.ArrayList;
 /**
@@ -19,7 +21,12 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
         initComponents();
         LoadcbbCanhBao();
     }
-    
+    public ThongTinHanMuc(String tenDangNhap) {
+        initComponents();
+        LoadcbbCanhBao();
+        tendangnhap = tenDangNhap;
+    }
+    String tendangnhap = new String();  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,6 +134,8 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
 
     private void btnUpdateHanMucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateHanMucActionPerformed
         // TODO add your handling code here:
+        GioiHanChiTieuBLL gioihanchitieubll = new GioiHanChiTieuBLL();
+        gioihanchitieubll.updateGioiHanChiTieuByTenDangNhap(tendangnhap, Integer.parseInt(txtHanMuc.getText()));
     }//GEN-LAST:event_btnUpdateHanMucActionPerformed
 public void LoadcbbCanhBao(){
       cbbCanhBao.setModel(new DefaultComboBoxModel<>(new String[]{"5%","10%","15%","20%","25%","30%","35%","40%","45%","50%","55%","60%","65%","70%","75%","80%","85%","90%","95%"}));
