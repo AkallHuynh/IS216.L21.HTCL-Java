@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T07:10:12.710Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64" etag="VSkn47-NJpO8QdUq-EcV" version="14.8.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-07-04T14:47:29.692Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64" etag="TeQ_w7DDN3xztjn3C1_p" version="14.8.4" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
-    <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2071" dy="1744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -420,13 +420,13 @@
           <mxGeometry x="190" y="190" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-35" value="Đăng nhập" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=12;fontStyle=1;fillColor=#f5f5f5;whiteSpace=wrap;gradientColor=#b3b3b3;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
-          <mxGeometry x="190" y="290" width="70" height="30" as="geometry" />
+          <mxGeometry x="170" y="270" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-40" value="Đăng ký" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=12;fontStyle=1;fillColor=#f5f5f5;whiteSpace=wrap;gradientColor=#b3b3b3;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
-          <mxGeometry x="270" y="290" width="70" height="30" as="geometry" />
+          <mxGeometry x="280" y="270" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XRyoYy7uct4ZzE6NSU_v-2" value="Quên mật khẩu" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=12;fontStyle=1;fillColor=#f5f5f5;whiteSpace=wrap;gradientColor=#b3b3b3;" parent="zOUMmwGg_xpKz38YwSDY-9" vertex="1">
-          <mxGeometry x="205" y="330" width="120" height="30" as="geometry" />
+          <mxGeometry x="205" y="320" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zOUMmwGg_xpKz38YwSDY-41" value="Sai mật khẩu hoặc&lt;br&gt;tên đăng nhập" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
           <mxGeometry x="-300" y="-860" width="250" height="140" as="geometry" />
