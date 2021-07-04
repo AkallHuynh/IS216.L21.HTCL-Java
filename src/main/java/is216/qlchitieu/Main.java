@@ -5,6 +5,8 @@
  */
 package is216.qlchitieu;
 
+import is216.qlchitieu.GUI.Login;
+
 /**
  *
  * @author 18520
@@ -16,6 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new Login().setVisible(true);
     }
     
 }
