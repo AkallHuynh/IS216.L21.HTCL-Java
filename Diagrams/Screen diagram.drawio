@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-01T12:57:47.917Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 Edg/91.0.864.59" etag="uB-Zr8dUb7iUF0KHYnht" version="14.8.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-07-04T07:08:57.271Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64" etag="esDUF5JyJ2hSN2SJV6rE" version="14.8.3" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
     <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -255,7 +255,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fEtWrxZ9Q_CUSQm69vdD-1" value="Chi tiêu trong tháng còn cách&lt;br&gt;giới hạn &amp;lt;%&amp;gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
-          <mxGeometry x="240" y="640" width="250" height="140" as="geometry" />
+          <mxGeometry x="240" y="630" width="250" height="140" as="geometry" />
         </mxCell>
         <mxCell id="fEtWrxZ9Q_CUSQm69vdD-2" value="Cảnh báo" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;" parent="fEtWrxZ9Q_CUSQm69vdD-1" vertex="1">
           <mxGeometry width="250" height="30" relative="1" as="geometry" />
