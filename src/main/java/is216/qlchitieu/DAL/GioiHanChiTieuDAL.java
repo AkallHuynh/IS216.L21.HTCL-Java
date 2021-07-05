@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DAL;
+package DAL;
 
-import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
-import is216.qlchitieu.DBUtils.DBConnect;
+import DTO.GioiHanChiTieuDTO;
+import Utils.DBUtils;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author huynh
  */
 public class GioiHanChiTieuDAL {
-    private DBConnect dbu = null;
+    private DBUtils dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -23,7 +23,7 @@ public class GioiHanChiTieuDAL {
         GioiHanChiTieuDTO result = new GioiHanChiTieuDTO();
         String strSQL = "select * from gioihanchitieu where tendangnhap = '"+tenDangNhap+"'";
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -50,13 +50,14 @@ public class GioiHanChiTieuDAL {
         }
         return result;
     }
-    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan){
+    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan, double mucCanhBao){
         int result = 0;
 
-        String updateGioiHan = "update gioihanchitieu set gioihan = "+gioiHan+" where tendangnhap = '"+tenDangNhap+"'";
+        String updateGioiHan = "update gioihanchitieu set gioihan = "+gioiHan+", mucCanhBao = "+mucCanhBao
+                + " where tendangnhap = '"+tenDangNhap+"'";
  
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(updateGioiHan);
             result = pres.executeUpdate();
@@ -69,8 +70,65 @@ public class GioiHanChiTieuDAL {
             try{
                 conn.close();
                 pres.close();
-                rs.close();
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    public boolean isOverCanhBao(String tenDangNhap){
+        boolean result = false;
+        double tongChiTieuThang = 0;
+        double mucCanhBao = 0;
+        int gioiHan = 0;
+        String strSQL = "select * from gioihanchitieu where tendangnhap = '"+tenDangNhap+"'";
+        try{
+            dbu = new DBUtils();
+            conn = dbu.createConn();
+            pres = conn.prepareStatement(strSQL);
+            rs = pres.executeQuery();
+            if(rs.next()){
+                gioiHan = rs.getInt("gioihan");
+                mucCanhBao = rs.getDouble("muccanhbao");
+                tongChiTieuThang = rs.getDouble("tongchitieuthang");
+            }
+            if(tongChiTieuThang>= gioiHan*mucCanhBao){
+                result = true;
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                conn.close();
+                pres.close();
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    public int updateTongChiTieuThang(double tongChiTieuThang, String tenDangNhap){
+        int result = 0;
+        String strSQL = "update gioihanchitieu set tongChiTieuThang = "+tongChiTieuThang
+                +" where tendangnhap = '"+tenDangNhap+"'";
+        try{
+            dbu = new DBUtils();
+            conn = dbu.createConn();
+            pres = conn.prepareStatement(strSQL);
+            result = pres.executeUpdate();
 
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                conn.close();
+                pres.close();
             }
             catch(Exception e){
                 e.printStackTrace();

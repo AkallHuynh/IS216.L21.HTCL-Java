@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DAL;
+package DAL;
 
+import Utils.DBUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import is216.qlchitieu.DTO.ThongTinChiTieuDTO;
-import is216.qlchitieu.DBUtils.DBConnect;
+import DTO.ThongTinChiTieuDTO;
+
 import java.util.ArrayList;
 
 /**
@@ -20,7 +21,7 @@ import java.util.ArrayList;
  */
 public class ThongTinChiTieuDAL {
 
-    private DBConnect dbu = null;
+    private DBUtils dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -32,7 +33,7 @@ public class ThongTinChiTieuDAL {
 
         try {
 
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlInsert);
             pres.setString(1, HangHoa.getmaTieuDung());
@@ -59,7 +60,7 @@ public class ThongTinChiTieuDAL {
         int result = 0;
         String sqlDelete = "delete from TIEUDUNG where maTieuDung = ?";
         try {
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlDelete);
             pres.setString(1, HangHoa.getmaTieuDung());
@@ -84,7 +85,7 @@ public class ThongTinChiTieuDAL {
 
         try {
 
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlInsert);
             pres.setString(1, TTCT.getMaChiTieu());

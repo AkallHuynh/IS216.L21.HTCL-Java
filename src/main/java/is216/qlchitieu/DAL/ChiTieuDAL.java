@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DAL;
+package DAL;
 
-import is216.qlchitieu.DTO.ChiTieuDTO;
-import is216.qlchitieu.DBUtils.DBConnect;
+import DTO.ChiTieuDTO;
+import Utils.DBUtils;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author huynh
  */
 public class ChiTieuDAL {
-    private DBConnect dbu = null;
+    private DBUtils dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -26,7 +26,7 @@ public class ChiTieuDAL {
         String sqlSelectAll = "select * from thongtinchitieu";
         
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlSelectAll);
             rs = pres.executeQuery();
@@ -65,10 +65,10 @@ public class ChiTieuDAL {
         String strSQL = "select * from thongtinchitieu where tendangnhap = '"+tenDangNhap+"'";
         
         try{
-            dbu = new DBConnect();
-            conn = dbu.createConn();
-            pres = conn.prepareStatement(strSQL);
-            rs = pres.executeQuery();
+                dbu = new DBUtils();
+                conn = dbu.createConn();
+                pres = conn.prepareStatement(strSQL);
+                rs = pres.executeQuery();
             
             while(rs.next()){
                 ChiTieuDTO chitieu = new ChiTieuDTO();
@@ -108,7 +108,7 @@ public class ChiTieuDAL {
         String strSQL = "select * from thongtinchitieu where tendangnhap = '"+tenDangNhap+"'";
         
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -146,7 +146,7 @@ public class ChiTieuDAL {
         double luongTien =0;
         try{
             String strSQL1 = "select maTieuDung from thongtinchitieu where machitieu = '"+machitieu+"'";
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(strSQL1);
             rs = pres.executeQuery();
@@ -171,6 +171,42 @@ public class ChiTieuDAL {
                 pres.close();
                 rs.close();
 
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    public double getTongChiTieuByThang(int thang, int nam, String tenDangNhap){
+        double result = 0;
+        String strSQL = "select * from thongtinchitieu where tendangnhap = '"+tenDangNhap+"'";
+        try{
+            dbu = new DBUtils();
+            conn = dbu.createConn();
+            pres = conn.prepareStatement(strSQL);
+            rs = pres.executeQuery();
+            ArrayList<String> arrMaChiTieu = new ArrayList<String>();
+            while(rs.next()){
+                if(!arrMaChiTieu.contains(rs.getString("machitieu"))){
+                    arrMaChiTieu.add(rs.getString("machitieu"));
+                    String[] row = rs.getDate("ngaychi").toString().split("-");
+                    int namct = Integer.parseInt(row[0]);
+                    int thangct = Integer.parseInt(row[1]);
+                    if(thang==thangct && nam==namct){
+                        result += rs.getDouble("luongTien");
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                conn.close();
+                pres.close();
+                rs.close();
             }
             catch(Exception e){
                 e.printStackTrace();

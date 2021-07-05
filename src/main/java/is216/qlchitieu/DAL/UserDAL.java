@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DAL;
+package DAL;
 
+import Utils.DBUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import is216.qlchitieu.DTO.User;
-import is216.qlchitieu.DBUtils.DBConnect;
+import DTO.User;
+
 /**
  *
  * @author dangk
  */
 public class UserDAL {
-    private DBConnect dbu = null;
+    private DBUtils dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -26,7 +27,7 @@ public class UserDAL {
         User result = null;
         String sqlStm = "select tenDangNhap, matKhau from NguoiDung where tenDangNhap = ?";
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlStm);
             pres.setString(1, user.getUsername());
@@ -53,7 +54,7 @@ public class UserDAL {
         int result = 0;
         String sqlStm = "insert into NguoiDung values(?, ?)";
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlStm);
             pres.setString(1, user.getUsername());
@@ -76,7 +77,7 @@ public class UserDAL {
         int result = 0;
         String sqlStm = "update NguoiDung set matKhau = ? where tenDangNhap = ?";
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlStm);
             pres.setString(2, user.getUsername());

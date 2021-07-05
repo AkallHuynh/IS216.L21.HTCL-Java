@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DAL;
+package DAL;
 
 
-import is216.qlchitieu.DTO.TieuDungDTO;
-import is216.qlchitieu.DBUtils.DBConnect;
+import DTO.TieuDungDTO;
+import Utils.DBUtils;
 import java.util.ArrayList;
 import java.sql.*;
 
@@ -16,7 +16,7 @@ import java.sql.*;
  * @author huynh
  */
 public class TieuDungDAL {
-    private DBConnect dbu = null;
+    private DBUtils dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -29,7 +29,7 @@ public class TieuDungDAL {
         String sqlSelectAll = "select * from tieudung";
         
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlSelectAll);
             rs = pres.executeQuery();
@@ -69,7 +69,7 @@ public class TieuDungDAL {
         String sqlSelectAll = "select * from tieudung where matieudung = '"+matieudung+"'";
         
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlSelectAll);
             rs = pres.executeQuery();
@@ -105,7 +105,7 @@ public class TieuDungDAL {
         ArrayList<TieuDungDTO> result = new ArrayList<TieuDungDTO>();
         ArrayList<String> arrMaTieuDung = new ArrayList<String>();
         try{
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             conn = dbu.createConn();
             String strSQL1 = "select matieudung from thongtinchitieu where machitieu = '"+machitieu+"'";
             pres = conn.prepareStatement(strSQL1);
