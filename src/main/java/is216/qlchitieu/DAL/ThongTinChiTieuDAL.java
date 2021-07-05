@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAL;
+package is216.qlchitieu.DAL;
 
-import Utils.DBUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import DTO.ThongTinChiTieuDTO;
-
+import is216.qlchitieu.DTO.ThongTinChiTieuDTO;
+import is216.qlchitieu.DBUtils.DBConnect;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +20,7 @@ import java.util.ArrayList;
  */
 public class ThongTinChiTieuDAL {
 
-    private DBUtils dbu = null;
+    private DBConnect dbu = null;
     private Connection conn = null;
     private PreparedStatement pres = null;
     private ResultSet rs = null;
@@ -33,7 +32,7 @@ public class ThongTinChiTieuDAL {
 
         try {
 
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlInsert);
             pres.setString(1, HangHoa.getmaTieuDung());
@@ -60,7 +59,7 @@ public class ThongTinChiTieuDAL {
         int result = 0;
         String sqlDelete = "delete from TIEUDUNG where maTieuDung = ?";
         try {
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlDelete);
             pres.setString(1, HangHoa.getmaTieuDung());
@@ -85,7 +84,7 @@ public class ThongTinChiTieuDAL {
 
         try {
 
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             conn = dbu.createConn();
             pres = conn.prepareStatement(sqlInsert);
             pres.setString(1, TTCT.getMaChiTieu());
@@ -93,6 +92,32 @@ public class ThongTinChiTieuDAL {
             pres.setDouble(3, TTCT.getLuongTien());
             pres.setString(4, TTCT.getNgayChi());
             pres.setString(5, TTCT.getmaTieuDung());
+
+            result = pres.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                conn.close();
+                pres.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    
+    public int updateTongChiTieuThang(ThongTinChiTieuDTO TTCT) {
+        int result = 0;
+        String sqlUpdate = "UPDATE gioihanchitieu SET tongChiTieuThang = ? WHERE tenDangNhap = ?";
+                try {
+
+            dbu = new DBConnect();
+            conn = dbu.createConn();
+            pres = conn.prepareStatement(sqlUpdate);
+            pres.setDouble(1, TTCT.gettongChiTieuThang());
+            pres.setString(2, TTCT.getTenDangNhap());
+
 
             result = pres.executeUpdate();
         } catch (SQLException e) {
