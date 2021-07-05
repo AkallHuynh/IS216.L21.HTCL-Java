@@ -26,6 +26,7 @@ CREATE TABLE `gioihanchitieu` (
   `maGioiHan` varchar(6) NOT NULL,
   `tenDangNhap` varchar(20) DEFAULT NULL,
   `gioiHan` int DEFAULT NULL,
+  `mucCanhBao` double DEFAULT NULL,
   `tongChiTieuThang` double DEFAULT NULL,
   PRIMARY KEY (`maGioiHan`),
   KEY `tenDangNhap` (`tenDangNhap`),
@@ -39,7 +40,7 @@ CREATE TABLE `gioihanchitieu` (
 
 LOCK TABLES `gioihanchitieu` WRITE;
 /*!40000 ALTER TABLE `gioihanchitieu` DISABLE KEYS */;
-INSERT INTO `gioihanchitieu` VALUES ('gh00','admin',0,0),('gh01','anhkhoa',0,0),('gh02','thebao',0,0),('gh03','huuphu',0,0),('gh04','dangkhoa',9000000,0);
+INSERT INTO `gioihanchitieu` VALUES ('gh00','admin',0,0.9,0),('gh01','anhkhoa',0,0.9,0),('gh02','thebao',0,0.9,0),('gh03','huuphu',0,0.9,0),('gh04','dangkhoa',9000000,0.9,0);
 /*!40000 ALTER TABLE `gioihanchitieu` ENABLE KEYS */;
 UNLOCK TABLES;
 
