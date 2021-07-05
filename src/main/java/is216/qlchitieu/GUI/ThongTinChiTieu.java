@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package is216.qlchitieu.GUI;
 
-import BLL.ChiTieuBLL;
-import BLL.GioiHanChiTieuBLL;
-import BLL.ThongTinChiTieuBLL;
-
-import DTO.ThongTinChiTieuDTO;
-import Utils.DBUtils;
+import is216.qlchitieu.BLL.ThongTinChiTieuBLL;
+import is216.qlchitieu.DBUtils.DBConnect;
+import is216.qlchitieu.DTO.ThongTinChiTieuDTO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,11 +38,50 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
     String MaTD = "";
     String MaCT = "";
 
-    DBUtils dbu = null;
+    DBConnect dbu = null;
     java.sql.Connection con = null;
     PreparedStatement pres = null;
     ResultSet rs = null;
     String temp = "";
+
+    public double TinhTongChiTieuThang() {
+        double TongChiTieuThang = 0;
+        String strSQL = "SELECT tongChiTieuThang from gioihanchitieu where tenDangNhap = '" + lbNguoiDung.getText() + "'";
+        try {
+            dbu = new DBConnect();
+            con = dbu.createConn();
+            pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = pres.executeQuery();
+            String TongHienTai = "";
+            while (rs.next()) {
+                TongHienTai = rs.getString("tongChiTieuThang");
+            }
+            TongChiTieuThang = Double.parseDouble(TongHienTai) + Double.parseDouble(txtLuongTien.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return TongChiTieuThang;
+
+    }
+
+    public int getGioiHan() {
+        int GioiHan = 0;
+        String strSQL = "SELECT gioiHan from gioihanchitieu where tenDangNhap = '" + lbNguoiDung.getText() + "'";
+        try {
+            dbu = new DBConnect();
+            con = dbu.createConn();
+            pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = pres.executeQuery();
+            String GH = "";
+            while (rs.next()) {
+                GH = rs.getString("gioiHan");
+            }
+            GioiHan = Integer.parseInt(GH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return GioiHan;
+    }
 
     public void Refresh() {
         datNgayChi.setDateFormatString("");
@@ -53,13 +89,14 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         txtSoLuong.setText("");
         txtThanhTien.setText("");
         cbbLoaiChiTieu.setSelectedIndex(0);
+        txtLuongTien.setText("");
     }
 
     public String LoadMaTieuDung() {
 
         String strSQL = "SELECT maTieuDung FROM TIEUDUNG order by maTieuDung DESC";
         try {
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = pres.executeQuery();
@@ -91,7 +128,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
 
         String strSQL = "SELECT maChiTieu FROM THONGTINCHITIEU order by maChiTieu DESC";
         try {
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = pres.executeQuery();
@@ -108,7 +145,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                 } else if (MaCTmoi < 1000) {
                     MaCT = "ct0" + MaCTmoi;
                 } else {
-                    MaCT = "ct" + MaCTmoi; 
+                    MaCT = "ct" + MaCTmoi;
                 }
             }
             con.close();
@@ -120,7 +157,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
 
     public void LoadTable() {
         tblModelTTCT = new DefaultTableModel();
-        String tieude[] = {"STT", "Tên hàng hóa", "Số lượng", "Thành tiền"};
+        String tieude[] = {"STT", "Tên hàng hóa", "Tên loại chi tiêu", "Số lượng", "Thành tiền"};
         tblModelTTCT.setColumnIdentifiers(tieude);
 
         ArrayList<ThongTinChiTieuDTO> arr = new ArrayList<ThongTinChiTieuDTO>();
@@ -128,55 +165,36 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         for (int i = 0; i < ListMaTieuDung.size(); i++) {
             String sqlSelect = "select * from TIEUDUNG WHERE maTieuDung = '" + ListMaTieuDung.get(i) + "'";
             try {
-                dbu = new DBUtils();
+                dbu = new DBConnect();
                 con = dbu.createConn();
                 pres = con.prepareStatement(sqlSelect);
 
                 rs = pres.executeQuery();
 
-                String row[] = new String[4];
+                String row[] = new String[5];
                 while (rs.next()) {
                     int count = i + 1;
                     row[0] = temp + count;
                     row[1] = rs.getString("tenHangHoa");
-                    row[2] = rs.getString("soLuong");
-                    row[3] = rs.getString("thanhTien");
+                    String j = rs.getString("loaiChiTieu");
+                    row[2] = ListLoaiCT.get(Integer.parseInt(j) - 1);
+                    row[3] = rs.getString("soLuong");
+                    row[4] = rs.getString("thanhTien");
                     tblModelTTCT.addRow(row);
                 }
-                /*for (int i = 0; i < ListMaTieuDung.size(); i++) {
-                   pres.setString(1, ListMaTieuDung.get(i));
-                ThongTinChiTieuDTO TieuDung = new ThongTinChiTieuDTO();
-                TieuDung.setmaTieuDung(rs.getString("tenHangHoa"));
-                TieuDung.setSoLuong(rs.getInt("soLuong"));
-                TieuDung.setThanhTien(rs.getDouble("thanhTien"));
 
-                arr.add(TieuDung);
-            }*/
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
-        /*ThongTinChiTieuDTO TTCT = new ThongTinChiTieuDTO();
-        for (int i = 0; i < arr.size(); i++) {
-            TTCT = arr.get(i);
-            int STT = i + 1;
-            String tenHH = TTCT.getTenHangHoa();
-            int soLuong = TTCT.getSoLuong();
-            double thanhTien = TTCT.getThanhTien();
-
-            Object[] row = {STT, tenHH, soLuong, thanhTien};
-            tblModelTTCT.addRow(row);
-        }*/
         tblTTCT.setModel(tblModelTTCT);
-
     }
 
     public void LoadCbbLoaiCT() {
         ListLoaiCT.removeAll(ListLoaiCT);
         try {
             String strSQL = "Select tenloaiChiTieu from LOAICHITIEU";
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -193,7 +211,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
     public double TinhLuongTien() {
         double LuongTien = 0;
         for (int i = 0; i < tblModelTTCT.getRowCount(); i++) {
-            LuongTien += Double.parseDouble(tblModelTTCT.getValueAt(i, 3).toString());
+            LuongTien += Double.parseDouble(tblModelTTCT.getValueAt(i, 4).toString());
         }
         return LuongTien;
     }
@@ -207,14 +225,19 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
     public ThongTinChiTieu(String nguoiDung) {
         initComponents();
         this.nguoiDung = nguoiDung;
-        String txt = lbNguoiDung.getText();
-        lbNguoiDung.setText(txt + " " + nguoiDung);
+        lbNguoiDung.setText(nguoiDung);
         Date date = new Date();
         datNgayChi.setDate(date);
         tblModelTTCT = new DefaultTableModel();
-        String tieude[] = {"STT", "Tên hàng hóa", "Số lượng", "Thành tiền"};
+        String tieude[] = {"STT", "Tên hàng hóa", "Tên loại chi tiêu", "Số lượng", "Thành tiền"};
         tblModelTTCT.setColumnIdentifiers(tieude);
         LoadCbbLoaiCT();
+        if (lbNguoiDung.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin hãy đăng nhập trước",
+                    "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            new Login().setVisible(true);
+            this.dispose();
+        }
     }
 
     /**
@@ -264,9 +287,9 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbNguoiDung, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -437,8 +460,8 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(btnThemHangHoa)
-                .addGap(36, 36, 36)
+                .addComponent(btnThemHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(btnXoaHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(183, 183, 183)
                 .addComponent(btnThemChiTieu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -469,9 +492,9 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -488,12 +511,12 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 423, Short.MAX_VALUE)
+            .addGap(0, 401, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 11, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 12, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -502,8 +525,13 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
 
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
         // TODO add your handling code here:
-        new MainMenu(nguoiDung).setVisible(true);
-        this.dispose();
+        if (!lbNguoiDung.getText().equals("")) {
+            new MainMenu(nguoiDung).setVisible(true);
+            this.dispose();
+        } else {
+            new Login().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnQuayLaiActionPerformed
 
     private void btnXoaHangHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaHangHoaActionPerformed
@@ -511,7 +539,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         ThongTinChiTieuDTO HangHoa = new ThongTinChiTieuDTO();
         String MaTDRemove = "";
         try {
-            dbu = new DBUtils();
+            dbu = new DBConnect();
             con = dbu.createConn();
             String MaTDSQL = "SELECT maTieuDung FROM TIEUDUNG WHERE tenHangHoa = '" + txtTenHangHoa.getText()
                     + "' AND soLuong = '" + txtSoLuong.getText() + "' AND thanhTien = '" + txtThanhTien.getText() + "'";
@@ -520,7 +548,6 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
             while (rs.next()) {
                 MaTDRemove = rs.getString("maTieuDung");
             }
-            System.out.println(MaTDRemove);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -535,13 +562,13 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                 if (result != 0) {
                     JOptionPane.showMessageDialog(null, "Xóa dữ liệu thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
-                LoadTable();
+
                 for (int i = 0; i < ListMaTieuDung.size(); i++) {
                     if (ListMaTieuDung.get(i).equals(MaTDRemove)) {
                         ListMaTieuDung.remove(i);
-                        System.out.println(ListMaTieuDung.get(i));
                     }
                 }
+
                 LoadTable();
                 settxtLuongTien();
             } catch (Exception ex) {
@@ -556,32 +583,35 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         ThongTinChiTieuBLL HangHoa_BLL = new ThongTinChiTieuBLL();
 
         LoadMaTieuDung();
-
-        if (txtTenHangHoa.getText().equals("") || txtThanhTien.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập tên hàng hóa và thành tiền",
+        if (lbNguoiDung.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin hãy đăng nhập trước",
                     "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-
         } else {
-            HangHoa.setmaTieuDung(MaTD);
-            HangHoa.setLoaiChiTieu(cbbLoaiChiTieu.getSelectedIndex() + 1);
-            HangHoa.setTenHangHoa(txtTenHangHoa.getText());
-            HangHoa.setSoLuong(Integer.parseInt(txtSoLuong.getText()));
-            HangHoa.setThanhTien(Double.parseDouble(txtThanhTien.getText()));
+            if (txtTenHangHoa.getText().equals("") || txtThanhTien.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập tên hàng hóa và thành tiền",
+                        "Thông báo", JOptionPane.INFORMATION_MESSAGE);
 
-            try {
-                int result = HangHoa_BLL.insertHangHoa(HangHoa);
-                if (result != 0) {
-                    JOptionPane.showMessageDialog(null, "Thêm hàng hóa thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                HangHoa.setmaTieuDung(MaTD);
+                HangHoa.setLoaiChiTieu(cbbLoaiChiTieu.getSelectedIndex() + 1);
+                HangHoa.setTenHangHoa(txtTenHangHoa.getText());
+                HangHoa.setSoLuong(Integer.parseInt(txtSoLuong.getText()));
+                HangHoa.setThanhTien(Double.parseDouble(txtThanhTien.getText()));
 
+                try {
+                    int result = HangHoa_BLL.insertHangHoa(HangHoa);
+                    if (result != 0) {
+                        JOptionPane.showMessageDialog(null, "Thêm hàng hóa thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+                    LoadTable();
+                    settxtLuongTien();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    System.out.println("Lỗi");
+                    JOptionPane.showMessageDialog(null, "Thêm dữ liệu không thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
-                LoadTable();
-                settxtLuongTien();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                System.out.println("Lỗi");
-                JOptionPane.showMessageDialog(null, "Thêm dữ liệu không thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             }
-
         }
     }//GEN-LAST:event_btnThemHangHoaActionPerformed
 
@@ -590,8 +620,13 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         int indexTB = tblTTCT.getSelectedRow();
         if (indexTB < tblTTCT.getRowCount() && indexTB >= 0) {
             txtTenHangHoa.setText(tblModelTTCT.getValueAt(indexTB, 1).toString());
-            txtSoLuong.setText(tblModelTTCT.getValueAt(indexTB, 2).toString());
-            txtThanhTien.setText(tblModelTTCT.getValueAt(indexTB, 3).toString());
+            for (int i = 0; i < ListLoaiCT.size(); i++) {
+                if (ListLoaiCT.get(i).equals(tblModelTTCT.getValueAt(indexTB, 2).toString())) {
+                    cbbLoaiChiTieu.setSelectedIndex(i);
+                }
+            }
+            txtSoLuong.setText(tblModelTTCT.getValueAt(indexTB, 3).toString());
+            txtThanhTien.setText(tblModelTTCT.getValueAt(indexTB, 4).toString());
         }
     }//GEN-LAST:event_tblTTCTMouseClicked
 
@@ -599,45 +634,57 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         // TODO add your handling code here:
         ThongTinChiTieuDTO TTCT = new ThongTinChiTieuDTO();
         ThongTinChiTieuBLL TTCT_BLL = new ThongTinChiTieuBLL();
-        ChiTieuBLL chiTieuBll = new ChiTieuBLL();
-        GioiHanChiTieuBLL ghctBll = new GioiHanChiTieuBLL();
         int result = 0;
 
         LoadMaChiTieu();
-
-        if (txtTenHangHoa.getText().equals("") || txtThanhTien.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập tên hàng hóa và thành tiền",
+        if (lbNguoiDung.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin hãy đăng nhập trước",
                     "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-
         } else {
-            TTCT.setMaChiTieu(MaCT);
-            TTCT.setTenDangNhap(nguoiDung);
-            TTCT.setLuongTien(TinhLuongTien());
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            TTCT.setNgayChi(df.format(datNgayChi.getDate()));
-            for (int i = 0; i < ListMaTieuDung.size(); i++) {
-                TTCT.setmaTieuDung(ListMaTieuDung.get(i));
+            if (tblTTCT.getRowCount() < 1) {
+                JOptionPane.showMessageDialog(null, "Vui lòng thêm hàng hóa trước ",
+                        "Thông báo", JOptionPane.INFORMATION_MESSAGE);
 
+            } else {
+                TTCT.setMaChiTieu(MaCT);
+                TTCT.setTenDangNhap(nguoiDung);
+                TTCT.setLuongTien(TinhLuongTien());
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                TTCT.setNgayChi(df.format(datNgayChi.getDate()));
+                for (int i = 0; i < ListMaTieuDung.size(); i++) {
+                    TTCT.setmaTieuDung(ListMaTieuDung.get(i));
+
+                    try {
+                        result = TTCT_BLL.insertTTCT(TTCT);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        System.out.println("Lỗi");
+                        JOptionPane.showMessageDialog(null, "Thêm dữ liệu không thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+                if (result != 0) {
+                    JOptionPane.showMessageDialog(null, "Thêm chi tiêu thành công: ",
+                            "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                }
+                result = 0;
+                double TongChiTieu = TinhTongChiTieuThang();
+                double KhoangCach = getGioiHan() - TongChiTieu;
+                TTCT.settongChiTieuThang(TongChiTieu);
+                TTCT.setTenDangNhap(nguoiDung);
                 try {
-                    result = TTCT_BLL.insertTTCT(TTCT);
+                    result = TTCT_BLL.updateTongChiTieuThang(TTCT);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     System.out.println("Lỗi");
-                    JOptionPane.showMessageDialog(null, "Thêm dữ liệu không thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Cập nhật tổng chi tiêu tháng không thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
-            }
-            if (result != 0) {
-                JOptionPane.showMessageDialog(null, "Thêm thông tin chi tiêu thành thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                String ngaygiaodich = sdf.format(datNgayChi.getDate());
-                String[] row = ngaygiaodich.split("/");
-                int nam = Integer.parseInt(row[2]);
-                int thang = Integer.parseInt(row[1]);
-                double tongChiTieu = chiTieuBll.getTongChiTieuByThang(thang, nam, nguoiDung);
-                ghctBll.updateTongChiTieuThang(tongChiTieu, nguoiDung);
-                if(ghctBll.isOverCanhBao(nguoiDung)){
-                    JOptionPane.showMessageDialog(null, "Cảnh báo đến giới hạn tiêu dùng", "Cảnh báo", JOptionPane.INFORMATION_MESSAGE);
+                if (result != 0) {
+                    JOptionPane.showMessageDialog(null, "Tháng này đã chi " + TongChiTieu
+                            + " (" + (Math.round(TongChiTieu / getGioiHan() * 100)) + "%)"
+                            + "\n\nCòn cách giơi hạn " + KhoangCach,
+                            "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
+                Refresh();
             }
         }
     }//GEN-LAST:event_btnThemChiTieuActionPerformed
@@ -659,13 +706,17 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ThongTinChiTieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ThongTinChiTieu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ThongTinChiTieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ThongTinChiTieu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ThongTinChiTieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ThongTinChiTieu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ThongTinChiTieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ThongTinChiTieu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -673,7 +724,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         String username = "";
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ThongTinChiTieu(username).setVisible(true);
+                new ThongTinChiTieu(username).setVisible(false);
             }
         });
     }
