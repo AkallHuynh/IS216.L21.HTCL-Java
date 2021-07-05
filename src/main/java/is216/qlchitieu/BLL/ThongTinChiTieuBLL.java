@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BLL;
+package is216.qlchitieu.BLL;
 
-import DTO.ThongTinChiTieuDTO;
-import DAL.ThongTinChiTieuDAL;
+import is216.qlchitieu.DTO.ThongTinChiTieuDTO;
+import is216.qlchitieu.DAL.ThongTinChiTieuDAL;
 
 /**
  *
@@ -29,5 +29,9 @@ public class ThongTinChiTieuBLL {
 
     public int insertTTCT(ThongTinChiTieuDTO TTCT) {
         return this.TTCTDAL.insertTTCT(TTCT);
+    }
+
+    public int updateTongChiTieuThang(ThongTinChiTieuDTO TTCT) {
+        return this.TTCTDAL.updateTongChiTieuThang(TTCT);
     }
 }
