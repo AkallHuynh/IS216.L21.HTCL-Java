@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.DTO;
+package DTO;
 
 /**
  *
@@ -12,7 +12,15 @@ package is216.qlchitieu.DTO;
 public class GioiHanChiTieuDTO {
     private String maGioiHan, tenDangNhap;
     private int gioiHan;
-    private double tongChiTieuThang;
+    private double tongChiTieuThang, mucCanhBao;
+
+    public void setMucCanhBao(double mucCanhBao) {
+        this.mucCanhBao = mucCanhBao;
+    }
+
+    public double getMucCanhBao() {
+        return mucCanhBao;
+    }
 
     public void setMaGioiHan(String maGioiHan) {
         this.maGioiHan = maGioiHan;
