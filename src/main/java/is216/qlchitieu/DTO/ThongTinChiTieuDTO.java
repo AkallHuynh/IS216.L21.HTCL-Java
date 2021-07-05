@@ -3,13 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DTO;
+package is216.qlchitieu.DTO;
 
 /**
  *
  * @author HP
  */
 public class ThongTinChiTieuDTO {
+
+    //Table gioihanchitieu
+    private double tongChiTieuThang;
+
+    public double gettongChiTieuThang() {
+        return tongChiTieuThang;
+    }
+
+    public void settongChiTieuThang(double tongChiTieuThang) {
+        this.tongChiTieuThang = tongChiTieuThang;
+    }
 
     //Table TieuDung
     private String maTieuDung, tenHangHoa;
