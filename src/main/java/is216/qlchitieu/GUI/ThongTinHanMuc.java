@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.GUI;
-import is216.qlchitieu.BLL.GioiHanChiTieuBLL;
-import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
+package GUI;
+import BLL.GioiHanChiTieuBLL;
+import DTO.GioiHanChiTieuDTO;
 import javax.swing.DefaultComboBoxModel;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author baobe
@@ -17,16 +18,18 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
     /**
      * Creates new form ThongTinHanMuc
      */
+    String tendangnhap = new String();
     public ThongTinHanMuc() {
         initComponents();
         LoadcbbCanhBao();
+        tendangnhap = "admin";
     }
     public ThongTinHanMuc(String tenDangNhap) {
         initComponents();
         LoadcbbCanhBao();
         tendangnhap = tenDangNhap;
     }
-    String tendangnhap = new String();  
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,6 +60,7 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
             }
         });
 
+        btnUpdateHanMuc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnUpdateHanMuc.setText("Chỉnh sửa hạn mức");
         btnUpdateHanMuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +68,7 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton2.setText("Quay lại");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,26 +110,28 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtHanMuc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtHanMuc, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbbCanhBao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbbCanhBao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdateHanMuc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        new MainMenu(tendangnhap).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cbbCanhBaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbCanhBaoActionPerformed
@@ -135,10 +142,16 @@ public class ThongTinHanMuc extends javax.swing.JFrame {
     private void btnUpdateHanMucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateHanMucActionPerformed
         // TODO add your handling code here:
         GioiHanChiTieuBLL gioihanchitieubll = new GioiHanChiTieuBLL();
-        gioihanchitieubll.updateGioiHanChiTieuByTenDangNhap(tendangnhap, Integer.parseInt(txtHanMuc.getText()));
+        int gioiHan = Integer.parseInt(txtHanMuc.getText());
+        double mucGioiHan = Double.parseDouble(cbbCanhBao.getSelectedItem().toString().replace("%", ""));
+        mucGioiHan = mucGioiHan/100;
+        int result = gioihanchitieubll.updateGioiHanChiTieuByTenDangNhap(tendangnhap, gioiHan, mucGioiHan);
+        if(result!=0){
+            JOptionPane.showMessageDialog(null, "Chỉnh sửa hạn mức và mức cảnh báo thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnUpdateHanMucActionPerformed
-public void LoadcbbCanhBao(){
-      cbbCanhBao.setModel(new DefaultComboBoxModel<>(new String[]{"5%","10%","15%","20%","25%","30%","35%","40%","45%","50%","55%","60%","65%","70%","75%","80%","85%","90%","95%"}));
+    public void LoadcbbCanhBao(){
+          cbbCanhBao.setModel(new DefaultComboBoxModel<>(new String[]{"5%","10%","15%","20%","25%","30%","35%","40%","45%","50%","55%","60%","65%","70%","75%","80%","85%","90%","95%"}));
     }
     /**
      * @param args the command line arguments

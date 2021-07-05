@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.GUI;
+package GUI;
 
-import is216.qlchitieu.BLL.ThongTinChiTieuBLL;
-import is216.qlchitieu.DBUtils.DBConnect;
-import is216.qlchitieu.DTO.ThongTinChiTieuDTO;
+import BLL.ChiTieuBLL;
+import BLL.GioiHanChiTieuBLL;
+import BLL.ThongTinChiTieuBLL;
+
+import DTO.ThongTinChiTieuDTO;
+import Utils.DBUtils;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,7 +41,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
     String MaTD = "";
     String MaCT = "";
 
-    DBConnect dbu = null;
+    DBUtils dbu = null;
     java.sql.Connection con = null;
     PreparedStatement pres = null;
     ResultSet rs = null;
@@ -56,7 +59,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
 
         String strSQL = "SELECT maTieuDung FROM TIEUDUNG order by maTieuDung DESC";
         try {
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = pres.executeQuery();
@@ -88,7 +91,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
 
         String strSQL = "SELECT maChiTieu FROM THONGTINCHITIEU order by maChiTieu DESC";
         try {
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             rs = pres.executeQuery();
@@ -125,7 +128,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         for (int i = 0; i < ListMaTieuDung.size(); i++) {
             String sqlSelect = "select * from TIEUDUNG WHERE maTieuDung = '" + ListMaTieuDung.get(i) + "'";
             try {
-                dbu = new DBConnect();
+                dbu = new DBUtils();
                 con = dbu.createConn();
                 pres = con.prepareStatement(sqlSelect);
 
@@ -173,7 +176,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         ListLoaiCT.removeAll(ListLoaiCT);
         try {
             String strSQL = "Select tenloaiChiTieu from LOAICHITIEU";
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             con = dbu.createConn();
             pres = con.prepareStatement(strSQL);
             rs = pres.executeQuery();
@@ -261,9 +264,9 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(73, 73, 73)
                 .addComponent(lbNguoiDung, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -434,8 +437,8 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(btnThemHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addComponent(btnThemHangHoa)
+                .addGap(36, 36, 36)
                 .addComponent(btnXoaHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(183, 183, 183)
                 .addComponent(btnThemChiTieu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -466,9 +469,9 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -485,12 +488,12 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 423, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 11, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 12, Short.MAX_VALUE)))
         );
 
         pack();
@@ -508,7 +511,7 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         ThongTinChiTieuDTO HangHoa = new ThongTinChiTieuDTO();
         String MaTDRemove = "";
         try {
-            dbu = new DBConnect();
+            dbu = new DBUtils();
             con = dbu.createConn();
             String MaTDSQL = "SELECT maTieuDung FROM TIEUDUNG WHERE tenHangHoa = '" + txtTenHangHoa.getText()
                     + "' AND soLuong = '" + txtSoLuong.getText() + "' AND thanhTien = '" + txtThanhTien.getText() + "'";
@@ -539,6 +542,8 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
                         System.out.println(ListMaTieuDung.get(i));
                     }
                 }
+                LoadTable();
+                settxtLuongTien();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -594,6 +599,8 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
         // TODO add your handling code here:
         ThongTinChiTieuDTO TTCT = new ThongTinChiTieuDTO();
         ThongTinChiTieuBLL TTCT_BLL = new ThongTinChiTieuBLL();
+        ChiTieuBLL chiTieuBll = new ChiTieuBLL();
+        GioiHanChiTieuBLL ghctBll = new GioiHanChiTieuBLL();
         int result = 0;
 
         LoadMaChiTieu();
@@ -621,7 +628,16 @@ public class ThongTinChiTieu extends javax.swing.JFrame {
             }
             if (result != 0) {
                 JOptionPane.showMessageDialog(null, "Thêm thông tin chi tiêu thành thành công: ", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String ngaygiaodich = sdf.format(datNgayChi.getDate());
+                String[] row = ngaygiaodich.split("/");
+                int nam = Integer.parseInt(row[2]);
+                int thang = Integer.parseInt(row[1]);
+                double tongChiTieu = chiTieuBll.getTongChiTieuByThang(thang, nam, nguoiDung);
+                ghctBll.updateTongChiTieuThang(tongChiTieu, nguoiDung);
+                if(ghctBll.isOverCanhBao(nguoiDung)){
+                    JOptionPane.showMessageDialog(null, "Cảnh báo đến giới hạn tiêu dùng", "Cảnh báo", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_btnThemChiTieuActionPerformed

@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -23,29 +23,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbNguoiDung" min="-2" pref="132" max="-2" attributes="0"/>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnDangXuat" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="161" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnThietLapHanMuc" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnThongKeChiTieu" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnHanMuc" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnThongKe" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnThemChiTieu" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
+          <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -56,9 +53,9 @@
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="btnThemChiTieu" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnThongKeChiTieu" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="btnThongKe" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnThietLapHanMuc" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="btnHanMuc" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace pref="33" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnDangXuat" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
@@ -79,20 +76,20 @@
         <Property name="text" type="java.lang.String" value="QU&#x1ea2;N L&#xdd; CHI TI&#xca;U"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnThongKeChiTieu">
+    <Component class="javax.swing.JButton" name="btnThongKe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng k&#xea; chi ti&#xea;u"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThongKeChiTieuActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThongKeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnThietLapHanMuc">
+    <Component class="javax.swing.JButton" name="btnHanMuc">
       <Properties>
         <Property name="text" type="java.lang.String" value="Thi&#x1ebf;t l&#x1ead;p h&#x1ea1;n m&#x1ee9;c"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThietLapHanMucActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHanMucActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnThemChiTieu">

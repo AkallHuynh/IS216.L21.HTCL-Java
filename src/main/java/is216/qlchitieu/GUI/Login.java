@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.GUI;
-import is216.qlchitieu.BLL.UserBLL;
-import is216.qlchitieu.DTO.User;
+package GUI;
+import BLL.UserBLL;
+import DTO.User;
 import javax.swing.JOptionPane;
 /**
  *
@@ -182,6 +182,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
@@ -189,25 +190,30 @@ public class Login extends javax.swing.JFrame {
         String password = String.valueOf(txtPassword.getPassword());
         boolean isValidated = new UserBLL().userValidate(new User(username, password));
         if(isValidated){
-            JOptionPane.showMessageDialog(null, "Dang nhap thanh cong", "Dang nhap", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Đăng nhập", JOptionPane.INFORMATION_MESSAGE);
             this.currentUser = username;
             new MainMenu(currentUser).setVisible(true);
             this.dispose();
         }
         else{
-            JOptionPane.showMessageDialog(null, "Sai mat khau hoac ten nguoi dung","Dang nhap",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Sai mật khẩu hoặc tên người dùng","Đăng nhập",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
-        String username = txtUsername.getText();
-        String password = String.valueOf(txtPassword.getPassword());
-        int result = new UserBLL().insertUser(new User(username, password));
-        if(result <= 0){
-            JOptionPane.showMessageDialog(null, "Dang ky that bai", "Dang ky", JOptionPane.ERROR_MESSAGE);
+        if(txtPassword.equals("")||txtUsername.equals("")){
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đủ thông tin");
         }
         else{
-            JOptionPane.showConfirmDialog(null, "Dang ky thanh cong", "Dang kys", JOptionPane.INFORMATION_MESSAGE);
+            String username = txtUsername.getText();
+            String password = String.valueOf(txtPassword.getPassword());
+            int result = new UserBLL().insertUser(new User(username, password));
+            if(result <= 0){
+                JOptionPane.showMessageDialog(null, "Đăng ký thất bại", "Đăng ký", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Đăng ký thành công", "Đăng ký", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btnDangKyActionPerformed
 
