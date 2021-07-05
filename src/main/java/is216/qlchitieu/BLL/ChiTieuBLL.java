@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.BLL;
+package BLL;
 
-import is216.qlchitieu.DAL.ChiTieuDAL;
-import is216.qlchitieu.DTO.ChiTieuDTO;
+import DAL.ChiTieuDAL;
+import DTO.ChiTieuDTO;
 import java.util.ArrayList;
 
 /**
@@ -26,5 +26,8 @@ public class ChiTieuBLL {
     }
     public int updateLuongTienById(String machitieu){
         return chiTieuDal.updateLuongTienById(machitieu);
+    }
+    public double getTongChiTieuByThang(int thang, int nam, String tenDangNhap){
+        return chiTieuDal.getTongChiTieuByThang(thang, nam, tenDangNhap);
     }
 }

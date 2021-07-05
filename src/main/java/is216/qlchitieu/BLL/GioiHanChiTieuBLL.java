@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.BLL;
+package BLL;
 
-import is216.qlchitieu.DAL.GioiHanChiTieuDAL;
-import is216.qlchitieu.DTO.GioiHanChiTieuDTO;
+import DAL.GioiHanChiTieuDAL;
+import DTO.GioiHanChiTieuDTO;
 
 /**
  *
@@ -17,7 +17,13 @@ public class GioiHanChiTieuBLL {
     public GioiHanChiTieuDTO getGioiHanChiTieuByTenDangNhap(String tendangnhap){
         return ghctDal.getGioiHanChiTieuByTenDangNhap(tendangnhap);
     }
-    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan){
-        return ghctDal.updateGioiHanChiTieuByTenDangNhap(tenDangNhap, gioiHan);
+    public int updateGioiHanChiTieuByTenDangNhap(String tenDangNhap, int gioiHan, double mucCanhBao){
+        return ghctDal.updateGioiHanChiTieuByTenDangNhap(tenDangNhap, gioiHan, mucCanhBao);
+    }
+    public boolean isOverCanhBao(String tenDangNhap){
+        return ghctDal.isOverCanhBao(tenDangNhap);
+    }
+    public int updateTongChiTieuThang(double tongChiTieuThang, String tenDangNhap){
+        return ghctDal.updateTongChiTieuThang(tongChiTieuThang, tenDangNhap);
     }
 }

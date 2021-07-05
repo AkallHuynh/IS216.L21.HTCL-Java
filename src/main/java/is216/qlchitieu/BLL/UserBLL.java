@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.BLL;
-import is216.qlchitieu.DTO.User;
-import is216.qlchitieu.DAL.UserDAL;
+package BLL;
+import DTO.User;
+import DAL.UserDAL;
 /**
  *
  * @author dangk

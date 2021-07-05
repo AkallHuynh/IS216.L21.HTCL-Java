@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package is216.qlchitieu.BLL;
+package BLL;
 
-import is216.qlchitieu.DAL.TieuDungDAL;
-import is216.qlchitieu.DTO.TieuDungDTO;
+import DAL.TieuDungDAL;
+import DTO.TieuDungDTO;
 import java.util.ArrayList;
 
 /**
