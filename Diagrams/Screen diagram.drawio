@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-06T13:00:51.575Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64" etag="Ry9PxyICgNGHHX0ViP7x" version="14.8.4" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-07-06T13:01:07.129Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64" etag="Bmo7YgPhrWUEvz-1hCyY" version="14.8.4" type="github" pages="6">
   <diagram id="RMA0gpW58A4giQYbhMxl" name="Sơ đồ màn hình">
-    <mxGraphModel dx="2333" dy="1881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2580" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -614,7 +614,7 @@
         <mxCell id="XRyoYy7uct4ZzE6NSU_v-3" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;" parent="1" vertex="1">
           <mxGeometry x="750" y="-480" width="410" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="XRyoYy7uct4ZzE6NSU_v-4" value="Dialog Title" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;" parent="XRyoYy7uct4ZzE6NSU_v-3" vertex="1">
+        <mxCell id="XRyoYy7uct4ZzE6NSU_v-4" value="Quên mật khẩu" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;" parent="XRyoYy7uct4ZzE6NSU_v-3" vertex="1">
           <mxGeometry width="410" height="30" relative="1" as="geometry" />
         </mxCell>
         <mxCell id="XRyoYy7uct4ZzE6NSU_v-5" value="" style="shape=ellipse;strokeColor=#008cff;resizable=0;fillColor=none;html=1;" parent="XRyoYy7uct4ZzE6NSU_v-4" vertex="1">
